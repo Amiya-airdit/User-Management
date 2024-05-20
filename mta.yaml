@@ -11,7 +11,7 @@ build-parameters:
         - npm ci
         - npx cds build --production
 modules:
-  - name: QCMM-srv
+  - name: administrator-srv
     type: nodejs
     path: gen/srv
     parameters:
@@ -26,14 +26,14 @@ modules:
           srv-url: ${default-url}
     requires:
       - name: QCMM-auth
-
-  - name: QCMM
+ 
+  - name: administrator
     type: approuter.nodejs
     path: app/router
     parameters:
       keep-existing-routes: true
       disk-quota: 1024M
-      memory: 512M
+      memory: 1024M
     requires:
       - name: srv-api
         group: destinations
@@ -42,7 +42,7 @@ modules:
           url: ~{srv-url}
           forwardAuthToken: true
       - name: QCMM-auth
-
+ 
 resources:
   - name: QCMM-auth
     type: org.cloudfoundry.existing-service
@@ -53,4 +53,4 @@ resources:
       config:
         xsappname: fieldmobility-${space}
         tenant-mode: dedicated
-
+ 
