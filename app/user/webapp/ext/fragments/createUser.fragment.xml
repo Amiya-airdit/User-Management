@@ -1,0 +1,273 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:upload="sap.m.upload"
+    xmlns:f='sap.ui.layout.form'
+    xmlns:u="sap.ui.unified"
+    xmlns:up='sap.m.upload'
+>
+    <Dialog
+        id="dailogCreateUser"
+        title="Edit User"
+        contentWidth="45%"
+        contentHeight="45%"
+        class="sapUiTinyMargin"
+        xmlns:upload="sap.m.upload"
+    >
+        <VBox class="sapUiMediumMargin">
+            <VBox
+                id="fileUpload"
+                alignItems="Center"
+                class="sapUiTinyMarginTop"
+            >
+                <Avatar
+                    id="userAvatar"
+                    displaySize="L"
+                    backgroundColor="Accent3"
+                    src="sap-icon://customer"
+                    press="onPress"
+                    badgeIcon="sap-icon://add"
+                    badgeTooltip="Upload Image"
+                />
+                <u:FileUploader
+                    id="fileUploader"
+                    name="fileUploader"
+                    uploadUrl="your_upload_url"
+                    uploadComplete="onUploadComplete"
+                    change="onFileSelectionChange"
+                    class="hideUploader"
+                />
+            </VBox>
+ 
+            <FlexBox
+                justifyContent="SpaceBetween"
+                class="sapUiTinyMarginTop"
+            >
+                <VBox>
+                    <Label
+                        id='LabelUserName'
+                        required="true"
+                        text="User Name"
+                    />
+                    <Input
+                        id='inputIDUserName'
+                        width="37vh"
+                    />
+                </VBox>
+                <VBox>
+                    <Label
+                        id='LabelFirstName'
+                        required="true"
+                        text="First Name"
+                    />
+                    <Input
+                        id='inputIDFirstName'
+                        width="37vh"
+                    />
+                </VBox>
+            </FlexBox>
+ 
+            <FlexBox
+                justifyContent="SpaceBetween"
+                class="sapUiTinyMarginTop"
+            >
+                <VBox>
+                    <Label
+                        id='LabelMiddleName'
+                        text="Middle Name"
+                    />
+                    <Input
+                        id='inputIDMiddleName'
+                        width="37vh"
+                    />
+                </VBox>
+                <VBox>
+                    <Label
+                        id='LabelLastName'
+                        text="Last Name"
+                    />
+                    <Input
+                        id='inputIDLastName'
+                        width="37vh"
+                    />
+                </VBox>
+            </FlexBox>
+            <FlexBox
+                justifyContent="SpaceBetween"
+                class="sapUiTinyMarginTop"
+            >
+                <VBox>
+                    <Label
+                        id='LabelEmailId'
+                        required="true"
+                        text="Email Id"
+                    />
+                    <Input
+                        id='inputIDEmailId'
+                        width="37vh"
+                    />
+                </VBox>
+                <VBox>
+                    <Label
+                        id='LabelMobilNo'
+                        required="true"
+                        text="Mobile No."
+                    />
+                    <Input
+                        id='inputIDMobilNo'
+                        type="Number"
+                        width="37vh"
+                    />
+                </VBox>
+            </FlexBox>
+ 
+            <FlexBox
+                justifyContent="SpaceBetween"
+                class="sapUiTinyMarginTop"
+            >
+                <VBox>
+                    <Label
+                        id='LabelAdminType'
+                        required="true"
+                        text="Admin Type"
+                    />
+                    <ComboBox
+                        id='inputIDUserType'
+                        width="37vh"
+                    >
+                        <items>
+                            <core:Item
+                                id='superUser'
+                                key='Super User'
+                                text='Super User'
+                            />
+                            <core:Item
+                                id='qualityUser'
+                                key='Quality User'
+                                text='Quality User'
+                            />
+                            <core:Item
+                                id='powerUser'
+                                key='Power User'
+                                text='Power User'
+                            />
+                            <core:Item
+                                id='CorporateUser'
+                                key='Corporate User'
+                                text='Corporate User'
+                            />
+                            <core:Item
+                                id='BuisnessUser'
+                                key='Buisness User'
+                                text='Buisness User'
+                            />
+                            <core:Item
+                                id='FieldUser'
+                                key='Field User'
+                                text='Field User'
+                            />
+                            <core:Item
+                                id='StoreUser'
+                                key='Store User'
+                                text='Store User'
+                            />
+                        </items>
+                    </ComboBox>
+                </VBox>
+                <VBox>
+                    <Label
+                        id='LabelAccountType'
+                        text="Account"
+                    />
+                    <ComboBox
+                        id='inputIDAccount'
+                        width="37vh"
+                    >
+                        <items>
+                            <core:Item
+                                id='idAccount'
+                                key='BJJ-GA'
+                                text='BJJ-GA'
+                            />
+                        </items>
+                    </ComboBox>
+                </VBox>
+            </FlexBox>
+ 
+            <!-- <upload:UploadSet
+                id="UploadSet"
+                instantUpload="true"
+                showIcons="true"
+                uploadEnabled="true"
+                terminationEnabled="true"
+                fileTypes="txt,doc,png"
+                maxFileNameLength="30"
+                maxFileSize="200"
+                mediaTypes="text/plain,application/msword,image/png"
+                uploadUrl="adddddddddddd"
+                items="{path: '/items', templateShareable: false}"
+                mode="MultiSelect"
+                selectionChanged="onSelectionChange"
+                class="sapUiTinyMarginTop"
+            >
+                <upload:toolbar>
+                    <OverflowToolbar>
+                        <Label
+                            text="Signature"
+                            required="true"
+                        />
+                        <ToolbarSpacer />
+                        <Button
+                            id="uploadSelectedButton"
+                            text="Upload selected"
+                            press="onUploadSelectedButton"
+                        />
+                       
+                    </OverflowToolbar>
+                </upload:toolbar>
+                <upload:items>
+                    <upload:UploadSetItem
+                        mediaType="application/msword"
+                        url="addddddddddd"
+                        markers="{path: 'markers', templateShareable: false}"
+                        statuses="{path: 'statuses', templateShareable: false}"
+                        uploadState="{uploadState}"
+                    >
+                        <upload:markers>
+                            <ObjectMarker
+                                type="{type}"
+                                visibility="{visibility}"
+                            />
+                        </upload:markers>
+                        <upload:statuses>
+                            <ObjectStatus
+                                title="{title}"
+                                text="{text}"
+                                state="{state}"
+                                icon="{icon}"
+                                active="{active}"
+                            />
+                        </upload:statuses>
+                    </upload:UploadSetItem>
+                </upload:items>
+            </upload:UploadSet> -->
+        </VBox>
+        <buttons>
+            <Button
+                text="Create"
+                press="onSubmitCreate"
+                icon="sap-icon://accept"
+                type="Accept"
+                id="uploadBtn"
+            />
+            <Button
+                id="cancel"
+                press="create_CloseBtn"
+                text="Cancel"
+                type="Reject"
+                icon="sap-icon://cancel"
+            />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>
+ 

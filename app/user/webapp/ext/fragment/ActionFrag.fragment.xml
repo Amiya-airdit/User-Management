@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<HBox id='actionBtn' core:require="{ handler: 'com/user/user/ext/fragment/ActionFrag'}" justifyContent="SpaceBetween">
+		<Button id='actionBtnEdit'  icon='sap-icon://edit' press="handler.onPress" />
+		<Button id='actionBtnDelete'  icon='sap-icon://delete' press="handler.onPress" />
+	</HBox>
+</core:FragmentDefinition>

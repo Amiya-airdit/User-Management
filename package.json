@@ -1,0 +1,47 @@
+{
+  "name": "projects",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^7",
+    "@sap/xssec": "^3",
+    "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
+    "express": "^4",
+    "mongodb": "^6.6.1"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7.9.1",
+    "@sap/ux-specification": "^1.120.10"
+  },
+  "scripts": {
+    "start": "cds-serve --port 5000",
+    "watch-usermanage": "cds watch --open usermanage/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-userflex": "cds watch --open userflex/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-user": "cds watch --open user/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-flexuser": "cds watch --open flexuser/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-v2user": "cds watch --open v2user/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-user-management": "cds watch --open user-management/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "sapux": [
+    "app/usermanage",
+    "app/userflex",
+    "app/usermanage",
+    "app/usermanage",
+    "app/user",
+    "app/flexuser",
+    "app/v2user",
+    "app/user-management"
+  ],
+  "cds": {
+    "requires": {
+      "[production]": {
+        "auth": "xsuaa"
+      }
+    }
+  }
+}
