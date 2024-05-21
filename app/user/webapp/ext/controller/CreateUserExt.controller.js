@@ -15,7 +15,6 @@ sap.ui.define(
           onInit: function () {
             // you can access the Fiori elements extensionAPI via this.base.getExtensionAPI
             var oModel = this.base.getExtensionAPI().getModel();
-            // this.getView().byId("html").setContent("<canvas id='signature-pad' width='400' height='200' class='signature-pad'></canvas>");
           },
         },
         onCreateUser: function () {
